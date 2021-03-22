@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery - Ninja to Cat</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            outline: 0;
+        }
+        .container{
+            max-width: 185px;
+            margin: 50px auto;
+            overflow: hidden;
+        }
+        .slices div {
+            width: 366px;
+            cursor: pointer;
+            margin: 2px 0px;
+        }
+        .slices img{
+            display: inline-block;
+            position: relative;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <div class="container slices">
+        <div>
+            <img src="img/cat0.png" alt="">
+            <img src="img/ninja0.png" alt="">
+        </div>
+        <div>
+            <img src="img/cat1.png" alt="">
+            <img src="img/ninja1.png" alt="">
+        </div>
+        <div>
+            <img src="img/cat2.png" alt="">
+            <img src="img/ninja2.png" alt="">
+        </div>
+        <div>
+            <img src="img/cat3.png" alt="">
+            <img src="img/ninja3.png" alt="">
+        </div>
+        <div>
+            <img src="img/cat4.png" alt="">
+            <img src="img/ninja4.png" alt="">
+        </div>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+            $('.slices div').click(function(){
+                var mLeft = parseInt($(this).css("margin-left"));
+                $(this).animate({
+                    "margin-left": (mLeft==0) ? -185 : 0
+                },1000);
+            });
+        });
+    </script>
+</body>
+</html>
